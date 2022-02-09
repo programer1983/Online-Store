@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Skeleton from "react-loading-skeleton"
+import {Link} from "react-router-dom"
 
 const Products = () => {
    const [data, setData] = useState([])
@@ -98,7 +99,9 @@ const Products = () => {
                            <div class="card-body">
                                <h5 class="card-title mb-0">{product.title.substring(0, 12)}...</h5>
                                <p class="card-text lead fw-bold">${product.price}</p>
-                                <a href="#" class="btn btn-outline-dark">By Now</a>
+                                <Link to={`/products/${product.id}`} class="btn btn-outline-dark">
+                                    By Now
+                                </Link>
                             </div>
                       </div>
                   </div>
